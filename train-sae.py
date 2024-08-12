@@ -5,7 +5,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--model_dir",  help="Path to the model directory",
                     type=str,       default=None,             required=True)
 parser.add_argument("--ckpt",       help="Checkpoint file",
-                    type=str,       default='latest_ckpt.pt', required=True)
+                    type=str,       default='latest_ckpt.pt', required=False)
 parser.add_argument("--layer_name", help="Layer name",
                     type=str,       default=None,             required=True)
 parser.add_argument("--batch_size", help="Batch size",

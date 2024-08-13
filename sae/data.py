@@ -3,6 +3,7 @@ from torch.utils.data import Dataset
 
 from model import GPT
 from dgp import PCFGDataset
+from utils import DictToObj
 
 import os
 import pickle as pkl
@@ -38,8 +39,11 @@ class SAEData(Dataset):
 
         print("Loading model...")
         model_dict = torch.load(os.path.join(self.model_dir, self.ckpt), map_location=self.device)
-        with open(os.path.join(self.model_dir, config), 'r') as f:
-            cfg = yaml.safe_load(f)
+        if config:
+            with open(os.path.join(self.model_dir, config), 'r') as f:
+                cfg = DictToObj(yaml.safe_load(f))
+        else:
+            cfg = model_dict['config']
         with open(os.path.join(self.model_dir, 'grammar/PCFG.pkl'), 'rb') as f:
             pcfg = pkl.load(f)
         self.model = GPT(cfg.model, pcfg.vocab_size).to(self.device)

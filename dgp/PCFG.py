@@ -377,7 +377,7 @@ class PCFG:
         self.production_rules += f" | Brack{n_brackets-1} [{1-p}]\n"
 
         for i in range(n_brackets):
-            self.production_rules += f"Brack -> 'o{i}' S 'c{i}' {p_nest:.2f} | 'o{i}' 'c{i}' {1-p_nest:.2f}\n"
+            self.production_rules += f"Brack{i} -> 'o{i}' S 'c{i}' [{p_nest:.2f}] | 'o{i}' 'c{i}' [{1-p_nest:.2f}]\n"
         
         self.lexical_symbolic_rules = ""
 

@@ -7,3 +7,6 @@ class DictToObj:
             if isinstance(value, dict):
                 d[key] = DictToObj(value)
         self.__dict__.update(d)
+    
+    def __getitem__(self, key):
+        return self.__dict__[key]

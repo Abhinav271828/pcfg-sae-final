@@ -1,4 +1,4 @@
-name: sweep-6
+name: sweep-12
 program: train-sae.py
 method: grid
 metric:  
@@ -18,9 +18,9 @@ parameters: #specify the hyperparamters you want to iterate over
     values: [8, 16, 32, 64, 128]
 
   pre_bias:
-    values: [false]
+    values: [True]
   norm:
-    values: ['']
+    values: ['input+dec']
 
   lr:
     values: [1e-5]

@@ -1,4 +1,4 @@
-name: sweep-2
+name: sweep-5
 program: train-sae.py
 method: grid
 metric:  

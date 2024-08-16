@@ -22,7 +22,7 @@ sparsity.add_argument("--sparsemax", help="Use sparsemax instead of softmax",
                       type=str,      default=False, required=False)
 
 parser.add_argument("--pre_bias",    help="Use pre-bias",
-                    type=bool,       default=False, required=False)
+                    type=eval,       default=False, required=False)
 parser.add_argument("--norm",        help="Normalization method",
                     type=str,        default=None,  required=False)
 parser.add_argument("--lr",          help="Learning rate",

@@ -1,4 +1,4 @@
-name: sweep-4
+name: sweep-1i
 program: train-sae.py
 method: grid
 metric:  
@@ -14,11 +14,11 @@ parameters: #specify the hyperparamters you want to iterate over
   exp_factor:
     values: [1, 2, 4, 8]
 
-  k:
-    values: [8, 16, 32, 64, 128]
+  alpha:
+    values: [1e-3, 1e-2, 1e-1, 1, 10, 100]
 
   pre_bias:
-    values: [false]
+    values: [False]
   norm:
     values: ['']
 
@@ -26,3 +26,4 @@ parameters: #specify the hyperparamters you want to iterate over
     values: [1e-5]
   train_iters:
     values: [5000]
+

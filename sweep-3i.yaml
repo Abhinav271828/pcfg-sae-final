@@ -1,4 +1,4 @@
-name: sweep-2
+name: sweep-3i
 program: train-sae.py
 method: grid
 metric:  
@@ -6,7 +6,7 @@ metric:
   goal: minimize
 parameters: #specify the hyperparamters you want to iterate over 
   model_dir:
-    values: ['results/scratch/3v4gwdfk']
+    values: ['results/scratch/vx8j11gp']
   layer_name:
     values: ['res0']
   batch_size:
@@ -18,7 +18,7 @@ parameters: #specify the hyperparamters you want to iterate over
     values: [1e-3, 1e-2, 1e-1, 1, 10, 100]
 
   pre_bias:
-    values: [false]
+    values: [False]
   norm:
     values: ['']
 
@@ -26,3 +26,4 @@ parameters: #specify the hyperparamters you want to iterate over
     values: [1e-5]
   train_iters:
     values: [5000]
+

@@ -179,7 +179,7 @@ class PCFG:
 
         elif language == 'dyck':
             self.n_brackets = config['n_brackets']
-            self.p_nest = config['p_nest']
+            self.p_nest = config['p_nest'] if 'p_nest' in config else 0.50
             self.grammar = self.create_grammar_dyck(
                 n_brackets=self.n_brackets,
                 p_nest=self.p_nest

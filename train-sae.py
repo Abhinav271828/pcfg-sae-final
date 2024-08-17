@@ -41,7 +41,7 @@ patience.add_argument("--val_patience", help="Validation patience",
                      type=int,          default=None, required=False)
 
 parser.add_argument("--config", help="Name of the configuration file for DGP",
-                    type=str,   default='conf.yaml', required=False)
+                    type=str,   default=False, required=False)
 
 args = parser.parse_args()
 

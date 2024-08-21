@@ -9,4 +9,6 @@ class DictToObj:
         self.__dict__.update(d)
     
     def __getitem__(self, key):
-        return self.__dict__[key]
+        if key in self.__dict__.keys() or not isinstance(key, int):
+            return self.__dict__[key]
+        return list(self.__dict__)[key]

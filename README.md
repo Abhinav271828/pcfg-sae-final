@@ -54,40 +54,42 @@ The other hyperparameters are fixed; `batch_size` is 128, `lr` $10^{-5}$, `train
 
 ## Expr
 - `results/scratch/12owob2t`: Model trained on prefix Expr.
-    - {alpha: [$10^{-3}$, ..., 100], pre_bias: false, norm: ''}
-    - {k: [8, 16, 32, 64, 128], pre_bias: false, norm: ''}
-    - {sparsemax: [no_kds, recon_dist, dist], pre_bias: false, norm: [input, recon, input+recon]}
-    - {alpha: [$10^{-3}$, ..., 100], pre_bias: false, norm: [input, input+recon]}
-    - {k: [8, 16, 32, 64, 128], pre_bias: false, norm: [input, input+recon]}
-    - {alpha: [$10^{-3}$, ..., 100], pre_bias: true, norm: 'input+dec'}
-    - {k: [8, 16, 32, 64, 128], pre_bias: true, norm: 'input+dec'}
+    - `txuzoop6` (sweep-1i): {alpha: [$10^{-3}$, ..., 100], pre_bias: false, norm: ''}
+    - `ouk2auft` (sweep-1ii): {k: [8, 16, 32, 64, 128], pre_bias: false, norm: ''}
+    - `0k4sitg1` (sweep-1iii): {sparsemax: [no_kds, recon_dist, dist], pre_bias: false, norm: [input, recon, input+recon]}
+    - `4op503ga` (sweep-1iv): {alpha: [$10^{-3}$, ..., 100], pre_bias: false, norm: [input, input+recon]}
+    - `jmsz85d0` (sweep-1v): {k: [8, 16, 32, 64, 128], pre_bias: false, norm: [input, input+recon]}
+    - `9zw7ax5b` (sweep-1vi): {alpha: [$10^{-3}$, ..., 100], pre_bias: true, norm: 'input+dec'}
+    - `yexoe4rc` (sweep-1vii): {k: [8, 16, 32, 64, 128], pre_bias: true, norm: 'input+dec'}
 - `results/scratch/ivq8uspe`: Model trained on postfix Expr.
 
 ## English
 - `results/scratch/3v4gwdfk`: Model trained on English (no prepositions, no relative clauses, p_conj 0.25 for nouns, 0.15 for verbs).
-    - {alpha: [$10^{-3}$, ..., 100], pre_bias: false, norm: ''}
-    - {k: [8, 16, 32, 64, 128], pre_bias: false, norm: ''}
-    - {alpha: [$10^{-3}$, ..., 100], pre_bias: true, norm: 'input+dec'}
-    - {k: [8, 16, 32, 64, 128], pre_bias: true, norm: 'input+dec'}
+    - `pa35mcy8` (sweep-2i): {alpha: [$10^{-3}$, ..., 100], pre_bias: false, norm: ''}
+    - `rsydzm4a` (sweep-2ii): {k: [8, 16, 32, 64, 128], pre_bias: false, norm: ''}
+    - `k8v87yur` (sweep-2iii): {alpha: [$10^{-3}$, ..., 100], pre_bias: true, norm: 'input+dec'}
+    - `ewwdogo3` (sweep-2iv): {k: [8, 16, 32, 64, 128], pre_bias: true, norm: 'input+dec'}
 - `results/scratch/vx8j11gp`: Model trained on English with transitivity and no other variations.
-    - {alpha: [$10^{-3}$, ..., 100], pre_bias: false, norm: ''}
-    - {k: [8, 16, 32, 64, 128], pre_bias: false, norm: ''}
+    - `wovrxleh` (sweep-3i): {alpha: [$10^{-3}$, ..., 100], pre_bias: false, norm: ''}
+    - `1k0zvaa1` (sweep-3ii): {k: [8, 16, 32, 64, 128], pre_bias: false, norm: ''}
 - `results/scratch/9rts35mx`: Model trained on English with adverbial and adjectival relative clauses.
-    - {alpha: [$10^{-3}$, ..., 100], pre_bias: false, norm: ''}
-    - {k: [8, 16, 32, 64, 128], pre_bias: false, norm: ''}
+    - `5xrp9ao5` (sweep-4i): {alpha: [$10^{-3}$, ..., 100], pre_bias: false, norm: ''}
+    - `vlzsuuw2` (sweep-4ii): {k: [8, 16, 32, 64, 128], pre_bias: false, norm: ''}
 - `results/scratch/bcb19qnd`: Model trained on English with adverbial and adjectival prepositional phrases (3 prepositions).
-    - {alpha: [$10^{-3}$, ..., 100], pre_bias: false, norm: ''}
-    - {k: [8, 16, 32, 64, 128], pre_bias: false, norm: ''}
+    - `982f370u` (sweep-5i): {alpha: [$10^{-3}$, ..., 100], pre_bias: false, norm: ''}
+    - `jz5ehe50` (sweep-5ii): {k: [8, 16, 32, 64, 128], pre_bias: false, norm: ''}
 - `results/scratch/ktm5d2gn`: Model trained on English with the probability of conjunctions in NPs and VPs set to 0.3.
 
 ## Dyck
 - `results/scratch/cpyib3ss`: Model trained on Dyck.
-    - {alpha: [$10^{-3}$, ..., 100], pre_bias: false, norm: ''}
-    - {k: [8, 16, 32, 64, 128], pre_bias: false, norm: ''}
-    - {alpha: [$10^{-3}$, ..., 100], pre_bias: true, norm: 'input+dec'}
-    - {k: [8, 16, 32, 64, 128], pre_bias: true, norm: 'input+dec'}
-    - {alpha: [$10^{-3}$, ..., 100], pre_bias: false, norm: '', config: {p_nest: 0.3}}
-    - {k: [8, 16, 32, 64, 128], pre_bias: false, norm: '', config: {p_nest: 0.3}}
+    - `z659wka4` (sweep-6i): {alpha: [$10^{-3}$, ..., 100], pre_bias: false, norm: ''}
+    - `d6e3v8kc` (sweep-6ii): {k: [8, 16, 32, 64, 128], pre_bias: false, norm: ''}
+    - `rmghx4cb` (sweep-6iii): {alpha: [$10^{-3}$, ..., 100], pre_bias: true, norm: 'input+dec'}
+    - `jketab8t` (sweep-6iv): {k: [8, 16, 32, 64, 128], pre_bias: true, norm: 'input+dec'}
+    - `6yia6guy` (sweep-6v): {alpha: [$10^{-3}$, ..., 100], pre_bias: false, norm: '', config: {p_nest: 0.3}}
+    - `m8gp41ku` (sweep-6vi): {k: [8, 16, 32, 64, 128], pre_bias: false, norm: '', config: {p_nest: 0.3}}
 - `results/scratch/87bnn1o6`: Model trained on Dyck with the probability of nesting set to 30%. Average depth about 5.
-    - {alpha: [$10^{-3}$, ..., 100], pre_bias: false, norm: ''}
-    - {k: [8, 16, 32, 64, 128], pre_bias: false, norm: ''}
+    - `4t092q2g` (sweep-7i): {alpha: [$10^{-3}$, ..., 100], pre_bias: False, norm: ''}
+    - `lm32lb8a` (sweep-7ii): {k: [8, 16, 32, 64, 128], pre_bias: False, norm: ''}
+    - `y75dol3u` (sweep-7iii): {alpha: [$10^{-3}$, ..., 100], pre_bias: True, norm: 'input+dec'}
+    - `68o9f3fm` (sweep-7iv): {k: [8, 16, 32, 64, 128], pre_bias: True, norm: 'input+dec'}

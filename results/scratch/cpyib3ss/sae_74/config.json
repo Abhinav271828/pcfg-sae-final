@@ -1,0 +1,19 @@
+{
+    "model_dir": "results/scratch/cpyib3ss",
+    "ckpt": "latest_ckpt.pt",
+    "layer_name": "res0",
+    "batch_size": 128,
+    "exp_factor": 2,
+    "alpha": null,
+    "k": 16,
+    "sparsemax": false,
+    "pre_bias": true,
+    "norm": "input+dec",
+    "lr": 1e-05,
+    "train_iters": 5000,
+    "val_iters": 10,
+    "val_interval": 50,
+    "patience": null,
+    "val_patience": null,
+    "config": false
+}

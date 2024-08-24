@@ -1,0 +1,19 @@
+{
+    "model_dir": "results/scratch/12owob2t",
+    "ckpt": "latest_ckpt.pt",
+    "layer_name": "res0",
+    "batch_size": 128,
+    "exp_factor": 2,
+    "alpha": null,
+    "k": null,
+    "sparsemax": "recon-dist",
+    "pre_bias": false,
+    "norm": "input",
+    "lr": 1e-05,
+    "train_iters": 5000,
+    "val_iters": 10,
+    "val_interval": 50,
+    "patience": null,
+    "val_patience": null,
+    "config": false
+}

@@ -61,7 +61,7 @@ class SAE(nn.Module):
             latent.scatter_(-1, indices, values)
 
         if 'dec' in self.norm:
-            norm = torch.norm(self.decoder, p=2, dim=1)
+            norm = torch.norm(self.decoder, p=2, dim=1) + 1e-8
             recon = torch.matmul(latent, self.decoder / norm.unsqueeze(1))
         else:
             recon = self.decoder(latent)
@@ -70,7 +70,7 @@ class SAE(nn.Module):
             recon = recon + self.bias
         
         if 'recon' in self.norm:
-            norm = torch.norm(recon, p=2, dim=1)
+            norm = torch.norm(recon, p=2, dim=1) + 1e-8
             recon = recon / norm.unsqueeze(1)
 
         return latent, recon

@@ -57,7 +57,7 @@ The other hyperparameters are fixed; `batch_size` is 128, `lr` $10^{-5}$, `train
     - `txuzoop6` (sweep-1i): {alpha: [$10^{-3}$, ..., 100], pre_bias: false, norm: ''}
     - `ouk2auft` (sweep-1ii): {k: [8, 16, 32, 64, 128], pre_bias: false, norm: ''}
     - `0k4sitg1` (sweep-1iii): {sparsemax: [no_kds, recon_dist, dist], pre_bias: false, norm: [input, recon, input+recon]}
-    - `4op503ga` (sweep-1iv): {alpha: [$10^{-3}$, ..., 100], pre_bias: false, norm: [input, input+recon]}
+    - `lzn332le` (sweep-1iv): {alpha: [$10^{-3}$, ..., 100], pre_bias: false, norm: [input, input+recon]} [`4op503ga` failed]
     - `jmsz85d0` (sweep-1v): {k: [8, 16, 32, 64, 128], pre_bias: false, norm: [input, input+recon]}
     - `9zw7ax5b` (sweep-1vi): {alpha: [$10^{-3}$, ..., 100], pre_bias: true, norm: 'input+dec'}
     - `yexoe4rc` (sweep-1vii): {k: [8, 16, 32, 64, 128], pre_bias: true, norm: 'input+dec'}

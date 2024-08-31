@@ -97,9 +97,15 @@ for i in tqdm(range(start, end)):
     handle = module.register_forward_hook(hook)
 
     current = []
-    for _ in range(iters):
-        results_after = grammar_evals(cfg, model, template=dataloader.dataset.template, grammar=dataloader.dataset.PCFG, device='cpu')
-        current.append(results_after['validity'])
+    try:
+      for _ in range(iters):
+          results_after = grammar_evals(cfg, model, template=dataloader.dataset.template, grammar=dataloader.dataset.PCFG, device='cpu')
+          current.append(results_after['validity'])
+    except RuntimeError:
+      with open(os.path.join(path, 'validities.txt'), 'a') as f:
+          f.write(f"{i} nan\n")
+      handle.remove()
+      continue
 
     validity = torch.tensor(current).mean().item()
     std = torch.tensor(current).std().item()

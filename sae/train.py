@@ -43,7 +43,7 @@ def train(args):
                 activation = activation / norm.unsqueeze(-1)
 
             latent, recon = model(activation)
-            recon_loss = criterion(recon, activation)
+            recon_loss = criterion(recon[:-1], activation[1:])
             reg_loss = args.alpha * torch.norm(latent, p=1) if args.alpha else 0
             loss = recon_loss + reg_loss
             loss.backward()
@@ -71,24 +71,30 @@ def train(args):
             if train_it % args.val_interval == 0:
                 model.eval()
                 val_loss = 0
+                val_loss_rec = 0
                 val_it = 0
                 with torch.no_grad():
                     for activation, seq in val_dl:
                         if val_it > args.val_iters: break
                         activation = activation.to(device)
+                        if 'input' in args.norm:
+                            norm = torch.norm(activation, p=2, dim=-1)
+                            activation = activation / norm.unsqueeze(-1)
                         latent, recon = model(activation)
-                        loss = criterion(recon, activation)
+                        loss = criterion(recon[:-1], activation[1:])
                         val_loss += loss.item()
+                        val_loss_rec += criterion(recon, activation).item()
                         val_it += 1
                 model.train()
-                wandb.log({'recon_loss': recon_loss.item(),
-                           'reg_loss'  : reg_loss.item() if args.alpha else 0,
-                           'train_loss': train_loss,
-                           'val_loss'  : val_loss   / args.val_iters,
-                           'enc_grad'  : enc_grad,
-                           'enc_norm'  : enc_norm,
-                           'dec_grad'  : dec_grad,
-                           'dec_norm'  : dec_norm})
+                wandb.log({'recon_loss'  : recon_loss.item(),
+                           'reg_loss'    : reg_loss.item() if args.alpha else 0,
+                           'train_loss'  : train_loss,
+                           'val_loss'    : val_loss / args.val_iters,
+                           'val_loss_rec': val_loss_rec  / args.val_iters,
+                           'enc_grad'    : enc_grad,
+                           'enc_norm'    : enc_norm,
+                           'dec_grad'    : dec_grad,
+                           'dec_norm'    : dec_norm})
 
                 if args.val_patience and val_loss > prev_loss:
                     loss_increasing += 1

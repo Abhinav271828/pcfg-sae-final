@@ -51,6 +51,7 @@ The other hyperparameters are fixed; `batch_size` is 128, `lr` $10^{-5}$, `train
     - `jmsz85d0` (128-167) (sweep-1v): {k: [8, 16, 32, 64, 128], pre_bias: false, norm: [input, input+recon]}
     - `9zw7ax5b` (168-191) (sweep-1vi): {alpha: [$10^{-3}$, ..., 100], pre_bias: true, norm: 'input+dec'}
     - `yexoe4rc` (192-211) (sweep-1vii): {k: [8, 16, 32, 64, 128], pre_bias: true, norm: 'input+dec'}
+    - `zp73zhp0` (0 locally): {k: 2, pre_bias: false, norm: 'input+recon'} with NTP
 - `results/scratch/ivq8uspe`: Model trained on postfix Expr.
 
 ## English
@@ -61,6 +62,7 @@ The other hyperparameters are fixed; `batch_size` is 128, `lr` $10^{-5}$, `train
     - `ewwdogo3` (68-87) (sweep-2iv): {k: [8, 16, 32, 64, 128], pre_bias: true, norm: 'input+dec'}
     - `imuidyg3` (88-135) (sweep-2v): {alpha: [$10^{-3}$, ..., 100], pre_bias: false, norm: ['input', 'input+recon]}
     - `tt314uaa` (136-175) (sweep-2vi): {k: [8, 16, 32, 64, 128], pre_bias: false, norm: ['input', 'input+recon]}
+    - `zp73zhp0` (0 locally): {k: 2, pre_bias: false, norm: 'input+recon'} with NTP
 - `results/scratch/vx8j11gp`: Model trained on English with transitivity and no other variations.
     - `wovrxleh` (0-23) (sweep-3i): {alpha: [$10^{-3}$, ..., 100], pre_bias: false, norm: ''}
     - `1k0zvaa1` (24-43) (sweep-3ii): {k: [8, 16, 32, 64, 128], pre_bias: false, norm: ''}
@@ -82,6 +84,7 @@ The other hyperparameters are fixed; `batch_size` is 128, `lr` $10^{-5}$, `train
     - `m8gp41ku` (112-131) (sweep-6vi): {k: [8, 16, 32, 64, 128], pre_bias: false, norm: '', config: {p_nest: 0.3}}
     - `ductq0el` (132-179) (sweep-6vii): {alpha: [$10^{-3}$, ..., 100], pre_bias: false, norm: ['input', 'input+recon]}
     - `1imnvyow` (180-219) (sweep-6viii): {k: [8, 16, 32, 64, 128], pre_bias: false, norm: ['input', 'input+recon]}
+    - `zp73zhp0` (0 locally): {k: 2, pre_bias: false, norm: 'input+recon'} with NTP
 - `results/scratch/87bnn1o6`: Model trained on Dyck with the probability of nesting set to 30%. Average depth about 5.
     - `4t092q2g` (0-23) (sweep-7i): {alpha: [$10^{-3}$, ..., 100], pre_bias: False, norm: ''}
     - `lm32lb8a` (24-43) (sweep-7ii): {k: [8, 16, 32, 64, 128], pre_bias: False, norm: ''}
